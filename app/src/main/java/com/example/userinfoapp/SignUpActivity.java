@@ -6,12 +6,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
 import android.text.TextUtils;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -27,6 +32,7 @@ public final class SignUpActivity extends AppCompatActivity {
 
     EditText UsernameID, registerEmail, registerPass ;
     Button signup;
+    TextView textView;
     RadioGroup radioGroup;
     RadioButton radioButton1, radioButton2;
 
@@ -85,9 +91,38 @@ public final class SignUpActivity extends AppCompatActivity {
 
             }
         });
+        /*Button button=findViewById(R.id.TextID);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SignUpActivity.this,LoginActivity.class);
+                startActivity(intent);
+            }
+        });*/
+        textView=findViewById(R.id.TextID);
+
+        String text= "Already Have An Account";
+        SpannableString spannableString=new SpannableString(text);
+
+
+        ClickableSpan clickableSpan=new ClickableSpan() {
+            @Override
+            public void onClick(@NonNull View widget) {
+                Intent intent = new Intent(SignUpActivity.this,LoginActivity.class);
+                startActivity(intent);
+
+            }
+        };spannableString.setSpan(clickableSpan,8,23,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        textView.setText(spannableString);
+        textView.setMovementMethod(LinkMovementMethod.getInstance());
+
+
+
     }
 
-            private void CheakError() {
+
+
+    private void CheakError() {
                 String regEmail = registerEmail.getText().toString();
                 String regPass = registerPass.getText().toString();
 
@@ -133,6 +168,10 @@ public final class SignUpActivity extends AppCompatActivity {
 
 
         });
+
+
+
+
 
 
     }
