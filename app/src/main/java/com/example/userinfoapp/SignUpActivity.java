@@ -31,7 +31,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public final class SignUpActivity extends AppCompatActivity {
 
     EditText UsernameID, registerEmail, registerPass ;
-    Button signup;
+    Button signup,google;
     TextView textView;
     RadioGroup radioGroup;
     RadioButton radioButton1, radioButton2;
@@ -57,6 +57,7 @@ public final class SignUpActivity extends AppCompatActivity {
         registerEmail = findViewById(R.id.registerEmailID);
         registerPass = findViewById(R.id.registerpassID);
         signup = findViewById(R.id.signupID);
+        google=findViewById(R.id.sign_google);
 
 
         signup.setOnClickListener(new View.OnClickListener() {
