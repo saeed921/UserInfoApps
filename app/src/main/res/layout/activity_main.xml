@@ -14,5 +14,33 @@
        android:id="@+id/bottomID"
         android:layout_alignParentBottom="true"/>
 
+        <androidx.drawerlayout.widget.DrawerLayout
+            android:layout_width="match_parent"
+            android:id="@+id/drawerID"
+            tools:openDrawer="start"
+            android:layout_height="match_parent">
+
+
+
+            <com.google.android.material.navigation.NavigationView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/navigationID"
+                app:menu="@menu/drawermenu"
+                app:headerLayout="@layout/headerfile"
+                android:layout_gravity="start"
+                android:fitsSystemWindows="true"
+
+
+                />
+
+        </androidx.drawerlayout.widget.DrawerLayout>
+
+
+
+
+
+
+
 
 </RelativeLayout>

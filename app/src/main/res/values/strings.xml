@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">UserInfoApp</string>
+    <string name="open">open</string>
+    <string name="off">off</string>
 </resources>
